@@ -1,0 +1,27 @@
+{
+  "name": "light-utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require ts-node/register tests/**/*.spec.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afferenslucem/lite-utils.git"
+  },
+  "author": "Alex Shakirov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/afferenslucem/lite-utils/issues"
+  },
+  "homepage": "https://github.com/afferenslucem/lite-utils#readme",
+  "devDependencies": {
+    "@types/mocha": "^8.0.1",
+    "chai": "^4.2.0",
+    "mocha": "^8.1.0",
+    "ts-mocha": "^7.0.0",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {}
+}

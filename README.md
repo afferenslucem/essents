@@ -1,0 +1,1 @@
+should run "npm i mocha@latest ts-mocha@latest typescript@latest -g"
