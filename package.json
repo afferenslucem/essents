@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require ts-node/register tests/**/*.spec.ts"
+    "test": "ts-mocha -p .\\src\\tsconfig.json tests/**/*.spec.ts"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/afferenslucem/lite-utils#readme",
   "devDependencies": {
+    "@types/chai": "^4.2.12",
     "@types/mocha": "^8.0.1",
     "chai": "^4.2.0",
     "mocha": "^8.1.0",

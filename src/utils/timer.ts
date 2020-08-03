@@ -8,9 +8,9 @@ export class Timer {
 
     public start(): Timer {
         this._id = setTimeout(() => {
-            this._func.call(this._args);
+            this._func(...this._args);
 
-            if(this.autokill) {
+            if(this.kill) {
                 this.kill();
             }
         }, this._delay);
@@ -36,5 +36,9 @@ export class Timer {
 
     public get autokill(): boolean {
         return this._autokill;
+    }
+
+    public get delay(): number {
+        return this._delay;
     }
 }
