@@ -1,10 +1,12 @@
 {
-  "name": "light-utils",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "ursus-utilus",
+  "version": "1.0.1",
+  "description": "Just common utils",
+  "typings": "dist/index",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "ts-mocha -p .\\src\\tsconfig.json tests/**/*.spec.ts"
+    "test": "ts-mocha -p .\\src\\tsconfig.json tests/**/*.spec.ts",
+    "build": "tsc --p src\tsconfig.json"
   },
   "repository": {
     "type": "git",
