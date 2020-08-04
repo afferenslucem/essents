@@ -33,8 +33,8 @@ describe('Repeater', () => {
 
         await promise;
 
-        assert.isTrue(i > 2);
-
         repeater.kill();
+
+        assert.isTrue(i > 2);
     });
 });
