@@ -1,11 +1,32 @@
 export class Repeater {
+    /**
+     * Id of interval
+     * @private
+     */
     private _id: number | null = null;
-    private _args: any[];
 
+    /**
+     * Callback's arguments
+     * @private
+     */
+    private _args: any[] = [];
+
+    /**
+     * @constructor
+     * @this {Repeater}
+     * 
+     * @param _func Callback function
+     * @param _period Callback executing period
+     * @param args Callback arguments
+     */
     public constructor(private _func: Function, private _period: number, ...args: any[]) {
         this._args = args;
     }
 
+    /**
+     * Creates interval
+     * @returns {Repeater} reference to current instance
+     */
     public start(): Repeater {
         this._id = setInterval(() => {
             this._func(...this._args);
@@ -14,6 +35,10 @@ export class Repeater {
         return this;
     }
 
+    /**
+     * Removes interval
+     * @returns {Repeater} reference to current instance
+     */
     public kill(): Repeater {
         if(this._id == null) {
             throw new Error('Could not delete empty timer');
@@ -26,10 +51,18 @@ export class Repeater {
         return this;
     }
 
+    /**
+     * Marker of interval state
+     * @returns {boolean}
+     */
     public get alive(): boolean {
         return this._id != null;
     }
 
+    /**
+     * Callback executing period
+     * @returns {number}
+     */
     public get period(): number {
         return this._period;
     }

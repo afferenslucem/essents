@@ -1,6 +1,6 @@
 {
   "name": "ursus-utilus",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Just common utils",
   "typings": "dist/index",
   "main": "dist/index.js",
