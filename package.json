@@ -1,6 +1,6 @@
 {
   "name": "ursus-utilus",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Just common utils",
   "typings": "lib/index",
   "main": "lib/index.js",
@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/afferenslucem/lite-utils.git"
+    "url": "git+https://github.com/afferenslucem/ursus-utilus.git"
   },
   "author": "Alex Shakirov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/afferenslucem/lite-utils/issues"
+    "url": "https://github.com/afferenslucem/ursus-utilus/issues"
   },
-  "homepage": "https://github.com/afferenslucem/lite-utils#readme",
+  "homepage": "https://github.com/afferenslucem/ursus-utilus#readme",
   "devDependencies": {
     "@types/chai": "^4.2.12",
     "@types/mocha": "^8.0.1",
