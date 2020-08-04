@@ -11,7 +11,7 @@
     "declaration": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "dist"
+    "outDir": "lib"
   },
   "include": [
     "src/**/*.ts"
