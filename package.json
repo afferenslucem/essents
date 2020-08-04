@@ -5,7 +5,7 @@
   "typings": "dist/index",
   "main": "dist/index.js",
   "scripts": {
-    "test": "ts-mocha -p .\\src\\tsconfig.json tests/**/*.spec.ts",
+    "test": "ts-mocha -p tsconfig.json tests/**/*.spec.ts",
     "build": "tsc --p src\tsconfig.json"
   },
   "repository": {
