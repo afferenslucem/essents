@@ -1,3 +1,2 @@
-import { utils } from "mocha";
-
+export * from './utils/repeater';
 export * from './utils/timer';

@@ -1,12 +1,13 @@
 {
   "name": "ursus-utilus",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Just common utils",
   "typings": "dist/index",
   "main": "dist/index.js",
   "scripts": {
     "test": "ts-mocha -p tsconfig.json tests/**/*.spec.ts",
-    "build": "tsc --p src\tsconfig.json"
+    "build": "tsc --p tsconfig.json",
+    "pack": "npm run build && npm pack"
   },
   "repository": {
     "type": "git",

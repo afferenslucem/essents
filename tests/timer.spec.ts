@@ -37,8 +37,10 @@ describe('Timer', () => {
         });
 
         await promise;
-        
+
+        // @ts-ignore
         assert.equal(timer.alive, false);
+        // @ts-ignore
         assert.equal(timer.autokill, true);
     });
     
