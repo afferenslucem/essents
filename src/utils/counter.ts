@@ -78,7 +78,7 @@ export class Counter {
      * Value of callback triggering
      * @returns {number}
      */
-    public get tagretValue(): number {
+    public get targetValue(): number {
         return this._targetValue;
     }
 

@@ -9,7 +9,7 @@ describe('Counter', () => {
 
         const counter = new Counter(3, onFire, 1);
 
-        assert.equal(counter.tagretValue, 3, 'Invalid bound');
+        assert.equal(counter.targetValue, 3, 'Invalid bound');
         assert.equal(counter.currentStep, 1, 'Invalid step');
         assert.equal(counter.onFire, onFire, 'Invalid callback');
         assert.deepEqual(counter.args, [], 'Invalid args');
