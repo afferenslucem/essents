@@ -2,3 +2,5 @@ node_modules/
 lib/
 dist/
 ursus-utilus-*.tgz
+coverage
+.vscode

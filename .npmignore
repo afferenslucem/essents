@@ -1,2 +1,6 @@
 src
+tests
+coverage
+.vscode
 tsconfig.json
+ursus-utilus-*.tgz
