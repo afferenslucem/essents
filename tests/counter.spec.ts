@@ -36,7 +36,7 @@ describe('Counter', () => {
         counter.increment();
 
         assert.equal(fired, true, 'Callback wasn\'t activated');
-        assert.equal(counter.activated, true, 'Counter wasn\' activated');
+        assert.equal(counter.activated, true, 'Counter wasn\'t activated');
     });
 
     it('should throw error for incorrect initialStep', () => {

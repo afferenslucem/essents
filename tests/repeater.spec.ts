@@ -28,7 +28,7 @@ describe('Repeater', () => {
         }, 10).start();
 
         const promise = new Promise(resolve => {
-            new Timer(resolve, 50).start();
+            new Timer(resolve, 80).start();
         });
 
         await promise;

@@ -16,6 +16,7 @@ Project is created with:
 ## Examples
 
 * [Counter](#counter)
+* [Cycled Counter](#cycled-counter)
 * [Repeater](#repeater)
 * [Timer](#timer)
 
@@ -67,6 +68,63 @@ counter.increment() // currentStep: 3
 // Execute callback
 // Will print "Yet another hello John Doe"
 console.log(counter.activated) // true
+```
+
+### Cycled Counter
+
+#### Simple creation
+
+```
+import {CycledCounter} from 'ursus-utilus';
+
+const counter = new CycledCounter(3, () => {console.log('Hello')}); // Creates counter with target value 3, callback value and initial value 0
+
+counter.increment() // currentStep: 1
+counter.increment() // currentStep: 2
+counter.increment() // currentStep: 0
+// execute callback
+// Will print "Hello"
+
+counter.increment() // currentStep: 1
+counter.increment() // currentStep: 2
+counter.increment() // currentStep: 0
+// execute callback
+// Will print "Hello"
+```
+
+#### All constructor props using
+
+```
+...
+
+const counter = new CycledCounter(3, (name: string) => console.log(`Hello ${name}`), 2, 'Bob'); // Creates counter with target value 3, callback value, initial value 2 and optional argument "Bob" which using at callback
+
+counter.increment() // currentStep: 0
+// execute callback
+// Will print "Hello Bob"
+
+counter.increment() // currentStep: 1
+counter.increment() // currentStep: 2
+counter.increment() // currentStep: 0
+// execute callback
+// Will print "Hello Bob"
+```
+
+#### Using setters
+
+```
+...
+const counter = new CycledCounter(3); // Creates counter with target value 3 and initial value 0
+
+counter.onFire = (name: string, surename: string) => console.log(`Yet another hello ${name} ${surename}`); // Define callback
+
+counter.args = ['John', 'Doe'] // Define args
+
+counter.increment() // currentStep: 1
+counter.increment() // currentStep: 2
+counter.increment() // currentStep: 0
+// Execute callback
+// Will print "Yet another hello John Doe"
 ```
 
 ### Repeater
