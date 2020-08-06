@@ -172,6 +172,4 @@ console.log(timer.alive) // false | Because timer automaticaly delete timeout af
 
 To use this project, install it locally using npm:
 
-```typescript
-$npm i ursus-utilus
-```
+`$npm i ursus-utilus`
