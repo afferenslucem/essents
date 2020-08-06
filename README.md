@@ -1,13 +1,17 @@
 # Ursus-Utilus
+
 Simple library with useful utils
 
 ## Menu
+
 * [Technologies](#technologies)
 * [Examples](#examples)
 * [Setup](#setup)
 
 ## Technologies
+
 Project is created with:
+
 * typescript 3.9.7
 * chai 4.2.0
 * mocha 8.1.0
@@ -24,7 +28,7 @@ Project is created with:
 
 #### Simple creation
 
-```
+```typescript
 import {Counter} from 'ursus-utilus';
 
 const counter = new Counter(3, () => {console.log('Hello')}); // Creates counter with target value 3, callback value and initial value 0
@@ -40,7 +44,7 @@ counter.increment() // currentStep: 3
 
 #### All constructor props using
 
-```
+```typescript
 ...
 
 const counter = new Counter(3, (name: string) => console.log(`Hello ${name}`), 2, 'Bob'); // Creates counter with target value 3, callback value, initial value 2 and optional argument "Bob" which using at callback
@@ -52,7 +56,7 @@ counter.increment() // currentStep: 3
 
 #### Using setters
 
-```
+```typescript
 ...
 const counter = new Counter(3); // Creates counter with target value 3 and initial value 0
 
@@ -74,7 +78,7 @@ console.log(counter.activated) // true
 
 #### Simple creation
 
-```
+```typescript
 import {CycledCounter} from 'ursus-utilus';
 
 const counter = new CycledCounter(3, () => {console.log('Hello')}); // Creates counter with target value 3, callback value and initial value 0
@@ -94,7 +98,7 @@ counter.increment() // currentStep: 0
 
 #### All constructor props using
 
-```
+```typescript
 ...
 
 const counter = new CycledCounter(3, (name: string) => console.log(`Hello ${name}`), 2, 'Bob'); // Creates counter with target value 3, callback value, initial value 2 and optional argument "Bob" which using at callback
@@ -112,7 +116,7 @@ counter.increment() // currentStep: 0
 
 #### Using setters
 
-```
+```typescript
 ...
 const counter = new CycledCounter(3); // Creates counter with target value 3 and initial value 0
 
@@ -129,7 +133,7 @@ counter.increment() // currentStep: 0
 
 ### Repeater
 
-```
+```typescript
 import {Repeater} from 'ursus-utilus';
 
 const repeater = new Repeater(() => console.log('Hello'), 10); // Creates repeater with callback, 10ms interval and optional argument "Bob" which using at callback
@@ -146,7 +150,7 @@ console.log(repeater.alive) // false
 
 ### Timer
 
-```
+```typescript
 import {Timer} from 'ursus-utilus';
 
 const timer = new Timer((name: string) => console.log(`Hello ${name}`), 10, true, 'Bob'); // Creates timer with callback, 10ms delay, autokill flag, and optional argument "Bob"
@@ -165,8 +169,9 @@ console.log(timer.alive) // false | Because timer automaticaly delete timeout af
 ```
 
 ## Setup
+
 To use this project, install it locally using npm:
 
-```
+```typescript
 $npm i ursus-utilus
 ```
