@@ -28,6 +28,7 @@ export class Repeater {
      * @returns {Repeater} reference to current instance
      */
     public start(): Repeater {
+        // @ts-ignore
         this._id = setInterval(() => {
             this._func(...this._args);
         }, this._period);
@@ -44,6 +45,7 @@ export class Repeater {
             throw new Error('Could not delete empty timer');
         }
 
+        // @ts-ignore
         clearInterval(this._id);
 
         this._id = null;

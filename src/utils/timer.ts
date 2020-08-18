@@ -29,6 +29,7 @@ export class Timer {
      * @returns {Timer} reference to current instance
      */
     public start(): Timer {
+        // @ts-ignore
         this._id = setTimeout(() => {
             this._func(...this._args);
 
@@ -49,6 +50,7 @@ export class Timer {
             throw new Error('Could not delete empty timer');
         }
 
+        // @ts-ignore
         clearTimeout(this._id);
 
         this._id = null;
