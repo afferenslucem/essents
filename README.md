@@ -4,18 +4,9 @@ Simple library with useful utils
 
 ## Menu
 
-* [Technologies](#technologies)
 * [Examples](#examples)
 * [Setup](#setup)
-
-## Technologies
-
-Project is created with:
-
-* typescript 3.9.7
-* chai 4.2.0
-* mocha 8.1.0
-* ts-mocha 7.0.0
+* [Technologies](#technologies)
 
 ## Examples
 
@@ -23,6 +14,8 @@ Project is created with:
 * [Cycled Counter](#cycled-counter)
 * [Repeater](#repeater)
 * [Timer](#timer)
+* [Random](#random)
+* [UUID Generator](#UUID-Generator)
 
 ### Counter
 
@@ -168,8 +161,39 @@ console.log(timer.alive) // true
 console.log(timer.alive) // false | Because timer automaticaly delete timeout after triggering
 ```
 
+### Random
+
+```typescript
+import {Random} from 'ursus-utilus';
+
+const rd = new Random();
+
+console.log(rd.next()) // number [0 ... 999_999]
+
+console.log(rd.next(10)) // number [0 ... 9]
+```
+
+### UUID Generator
+
+```typescript
+import {UUIDGenerator} from 'ursus-utilus';
+
+const uuidGen = new UUIDGenerator();
+
+console.log(uuidGen.generate()) // uuid
+```
+
 ## Setup
 
 To use this project, install it locally using npm:
 
 `$npm i ursus-utilus`
+
+## Technologies
+
+Project is created with:
+
+* typescript 3.9.7
+* chai 4.2.0
+* mocha 8.1.0
+* ts-mocha 7.0.0
