@@ -1,13 +1,16 @@
 {
   "name": "ursus-utilus",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Just common utils",
   "typings": "lib/index",
   "main": "lib/index.js",
   "keywords": [
     "timer",
     "repeater",
-    "counter"
+    "counter",
+    "random",
+    "uuid",
+    "integer random"
   ],
   "scripts": {
     "test": "ts-mocha -p tsconfig.json tests/**/*.spec.ts",
