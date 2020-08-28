@@ -1,4 +1,4 @@
-# Ursus-Utilus
+# Essents
 
 Simple library with useful utils
 
@@ -22,7 +22,7 @@ Simple library with useful utils
 #### Simple creation
 
 ```typescript
-import {Counter} from 'ursus-utilus';
+import {Counter} from 'essents';
 
 const counter = new Counter(3, () => {console.log('Hello')}); // Creates counter with target value 3, callback value and initial value 0
 
@@ -72,7 +72,7 @@ console.log(counter.activated) // true
 #### Simple creation
 
 ```typescript
-import {CycledCounter} from 'ursus-utilus';
+import {CycledCounter} from 'essents';
 
 const counter = new CycledCounter(3, () => {console.log('Hello')}); // Creates counter with target value 3, callback value and initial value 0
 
@@ -127,7 +127,7 @@ counter.increment() // currentStep: 0
 ### Repeater
 
 ```typescript
-import {Repeater} from 'ursus-utilus';
+import {Repeater} from 'essents';
 
 const repeater = new Repeater(() => console.log('Hello'), 10); // Creates repeater with callback, 10ms interval and optional argument "Bob" which using at callback
 
@@ -144,7 +144,7 @@ console.log(repeater.alive) // false
 ### Timer
 
 ```typescript
-import {Timer} from 'ursus-utilus';
+import {Timer} from 'essents';
 
 const timer = new Timer((name: string) => console.log(`Hello ${name}`), 10, true, 'Bob'); // Creates timer with callback, 10ms delay, autokill flag, and optional argument "Bob"
 
@@ -164,7 +164,7 @@ console.log(timer.alive) // false | Because timer automaticaly delete timeout af
 ### Random
 
 ```typescript
-import {Random} from 'ursus-utilus';
+import {Random} from 'essents';
 
 const rd = new Random();
 
@@ -176,7 +176,7 @@ console.log(rd.next(10)) // number [0 ... 9]
 ### UUID Generator
 
 ```typescript
-import {UUIDGenerator} from 'ursus-utilus';
+import {UUIDGenerator} from 'essents';
 
 const uuidGen = new UUIDGenerator();
 
@@ -187,7 +187,7 @@ console.log(uuidGen.generate()) // uuid
 
 To use this project, install it locally using npm:
 
-`$npm i ursus-utilus`
+`$npm i essents`
 
 ## Technologies
 

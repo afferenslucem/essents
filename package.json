@@ -1,5 +1,5 @@
 {
-  "name": "ursus-utilus",
+  "name": "essents",
   "version": "1.2.1",
   "description": "Just common utils",
   "typings": "lib/index",
@@ -19,14 +19,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/afferenslucem/ursus-utilus.git"
+    "url": "git+https://github.com/afferenslucem/essents.git"
   },
   "author": "Alex Shakirov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/afferenslucem/ursus-utilus/issues"
+    "url": "https://github.com/afferenslucem/essents/issues"
   },
-  "homepage": "https://github.com/afferenslucem/ursus-utilus#readme",
+  "homepage": "https://github.com/afferenslucem/essents#readme",
   "devDependencies": {
     "@types/chai": "^4.2.12",
     "@types/mocha": "^8.0.1",
