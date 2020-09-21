@@ -1,6 +1,6 @@
 {
   "name": "essents",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Just common utils",
   "typings": "lib/index",
   "main": "lib/index.js",

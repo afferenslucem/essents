@@ -33,7 +33,7 @@ export class Timer {
         this._id = setTimeout(() => {
             this._func(...this._args);
 
-            if(this.kill) {
+            if(this.kill && this.alive && this.autokill) {
                 this.kill();
             }
         }, this._delay);
