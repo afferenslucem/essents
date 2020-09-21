@@ -41,10 +41,6 @@ export class Repeater {
      * @returns {Repeater} reference to current instance
      */
     public kill(): Repeater {
-        if(this._id == null) {
-            throw new Error('Could not delete empty timer');
-        }
-
         // @ts-ignore
         clearInterval(this._id);
 

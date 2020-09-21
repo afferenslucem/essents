@@ -46,10 +46,6 @@ export class Timer {
      * @returns {Timer} reference to current instance
      */
     public kill(): Timer {
-        if(this._id == null) {
-            throw new Error('Could not delete empty timer');
-        }
-
         // @ts-ignore
         clearTimeout(this._id);
 
