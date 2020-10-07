@@ -1,15 +1,10 @@
 export class Timer {
-    /**
-     * Id of timeout
-     * @private
-     */
+
     private _id: number | null = null;
 
-    /**
-     * Callback's arguments
-     * @private
-     */
     private _args: any[] = [];
+
+    private _started = false;
 
     /**
      * @constructor
@@ -31,6 +26,8 @@ export class Timer {
     public start(): Timer {
         // @ts-ignore
         this._id = setTimeout(() => {
+            this._started = true;
+            
             this._func(...this._args);
 
             if(this.kill && this.alive && this.autokill) {
@@ -59,6 +56,10 @@ export class Timer {
      */
     public get alive(): boolean {
         return this._id != null;
+    }
+
+    public get routineStarted(): boolean {
+        return this._started;
     }
 
     /**
