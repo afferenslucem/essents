@@ -118,4 +118,38 @@ describe('UUIDGenerator', () => {
             }
         });
     });
+
+    describe('Generate static', () => {
+        it('should create static', () => {
+            const rd = new UUIDGenerator('hrodvitnir');
+
+            // @ts-ignore
+            const staticData: string = rd.generateStatic();
+
+            // @ts-ignore
+            assert.equal(staticData.length, 12);
+        });
+
+        it('should create static', () => {
+            const rd = new UUIDGenerator('hrodvitnir');
+
+            // @ts-ignore
+            const staticData: string = rd.generateStatic(6);
+
+            // @ts-ignore
+            assert.equal(staticData.length, 6);
+        });
+    })
+
+    describe('Get hash code', () => {
+        it('should generate hashCode', () => {
+            const rd = new UUIDGenerator('hrodvitnir');
+
+            // @ts-ignore
+            const hash: string = rd.getHashCode('hrodvitnir');
+
+            // @ts-ignore
+            assert.equal(hash, '37c5208b');
+        });
+    })
 })
