@@ -64,7 +64,7 @@ export class UUIDGenerator {
         const staticData = this.staticData;
         const random = this.generateStatic(6);
 
-        return `${date.slice(0, 8)}-${date.slice(-4)}-${version}${random.slice(0, 3)}-${variant}${random.slice(3, 6)}-${staticData}`
+        return `${date.slice(0, 8)}-${date.slice(-4)}-${version}${random.slice(0, 3)}-${variant}${random.slice(4, 6)}-${staticData}`
     }
 
     private getDate(): number {
