@@ -1,5 +1,4 @@
 import { Random } from "./random";
-import { performance } from 'perf_hooks';
 
 export class UUIDGenerator {
     private random = new Random();
@@ -29,7 +28,7 @@ export class UUIDGenerator {
 
     private readFirstParam(first?: number | string) {
         if (typeof first == 'number') {
-            this.version = first.toString();
+            this.version = this.toString(first);
         } else if (typeof first == 'string') {
             this.staticData = this.convertStatic(first);
         }
@@ -48,7 +47,7 @@ export class UUIDGenerator {
 
         for (let i = 0; i < targetLength; i++) {
             const rand = this.random.next(16);
-            staticData += rand.toString(16);
+            staticData += this.toString(rand);
         }
 
         return staticData;
@@ -58,17 +57,20 @@ export class UUIDGenerator {
      * returns uuid
      */
     public generate(): string {
-        const date = this.getDate().toString(16).replace('.', '');
+        const date = this.getDateHEX();
         const version = this.version.toString();
         const variant = this.variant.toString();
         const staticData = this.staticData;
+
         const random = this.generateStatic(6);
 
         return `${date.slice(0, 8)}-${date.slice(-4)}-${version}${random.slice(0, 3)}-${variant}${random.slice(3, 6)}-${staticData}`
     }
 
-    private getDate(): number {
-        return new Date().getTime();
+    private getDateHEX(): string {
+        const date = new Date().getTime();
+
+        return this.toString(date).replace('.', '');
     }
 
     private getHashCode(str: string) {
@@ -78,12 +80,16 @@ export class UUIDGenerator {
             hash = Math.imul(31, hash) + str.charCodeAt(i) | 0;
         }
 
-        return (Math.abs(hash)).toString(16);
+        return this.toString((Math.abs(hash)));
     }
 
     private saltify(hash: string) {
         const saltLength = this.staticTargetLength - hash.length;
 
         return hash + this.generateStatic(saltLength);
+    }
+
+    private toString(number: number): string {
+        return number.toString(16);
     }
 }
