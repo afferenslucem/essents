@@ -8,7 +8,7 @@ export class UUIDGenerator {
     private version: string = '';
     private variant: string = '';
 
-    private readonly staticTargetLength = 14;
+    private readonly staticTargetLength = 12;
 
     public constructor();
     public constructor(v: number);

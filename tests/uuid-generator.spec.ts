@@ -17,7 +17,7 @@ describe('UUIDGenerator', () => {
         assert.isNotEmpty(rd.staticData);
 
         // @ts-ignore
-        assert.isTrue(rd.staticData.length == 14);
+        assert.isTrue(rd.staticData.length == 12);
 
         const uuid = rd.generate();
         assert.isTrue(uuid.charAt(14) == '4');
@@ -38,7 +38,7 @@ describe('UUIDGenerator', () => {
         assert.isNotEmpty(rd.staticData);
 
         // @ts-ignore
-        assert.isTrue(rd.staticData.length == 14);
+        assert.isTrue(rd.staticData.length == 12);
 
         const uuid = rd.generate();
         assert.isTrue(uuid.charAt(14) == '5');
@@ -59,7 +59,7 @@ describe('UUIDGenerator', () => {
         assert.isNotEmpty(rd.staticData);
 
         // @ts-ignore
-        assert.isTrue(rd.staticData.length == 14);
+        assert.isTrue(rd.staticData.length == 12);
 
         const uuid = rd.generate();
         assert.isTrue(uuid.charAt(14) == '4');
@@ -80,7 +80,7 @@ describe('UUIDGenerator', () => {
         assert.isNotEmpty(rd.staticData);
 
         // @ts-ignore
-        assert.isTrue(rd.staticData.length == 14);
+        assert.isTrue(rd.staticData.length == 12);
 
         const uuid = rd.generate();
         assert.isTrue(uuid.charAt(14) == '4');
@@ -101,7 +101,7 @@ describe('UUIDGenerator', () => {
         assert.isNotEmpty(rd.staticData);
 
         // @ts-ignore
-        assert.isTrue(rd.staticData.length == 14);
+        assert.isTrue(rd.staticData.length == 12);
 
         const uuid = rd.generate();
         assert.isTrue(uuid.charAt(14) == '6');
