@@ -109,7 +109,7 @@ describe('UUIDGenerator', () => {
         });
 
         it('should create with same lengthes', () => {
-            const reg = /[0-9a-f]{8}\\-([0-9a-f]{4}\\-){3}[0-9a-f]{12}$/;
+            const reg = /^[0-9a-f]{8}-([0-9a-f]{4}-){3}[0-9a-f]{12}$/;
 
             for (let i = 0; i < 32; i++) {
                 const rd = new UUIDGenerator('hrodvitnir');
