@@ -68,7 +68,7 @@ export class UUIDGenerator {
     }
 
     private getDate(): number {
-        return performance.timeOrigin + performance.now();
+        return new Date().getTime();
     }
 
     private getHashCode(str: string) {
