@@ -35,7 +35,7 @@ export class UUIDGenerator {
     }
 
     private getVariant() {
-        return this.toString(this.random.next(16) & 0x3 | 0x8)
+        return this.toString(this.random.next(16))
     }
 
     private convertStatic(userStatic: string): string {
