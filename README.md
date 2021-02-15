@@ -178,10 +178,15 @@ console.log(rd.next(10)) // number [0 ... 9]
 ```typescript
 import {UUIDGenerator} from 'essents';
 
-const uuidGen = new UUIDGenerator();
+const randomUuidGen = new UUIDGenerator();
+console.log(uuidGen.generate()) // fully random uuid v4
 
-console.log(uuidGen.generate()) // uuid
+const uuidGen = new UUIDGenerator(5, 'hrodvitnir');
+console.log(uuidGen.generate()) // generates uuid v5 with hash of login
 ```
+
+> :warning:
+> Generator use timestamp + `Math.random` + static data which you specify at constructor
 
 ## Setup
 
