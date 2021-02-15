@@ -151,5 +151,56 @@ describe('UUIDGenerator', () => {
             // @ts-ignore
             assert.equal(hash, '37c5208b');
         });
+
+        it('should generate hashCode', () => {
+            const rd = new UUIDGenerator('hrodvitnir');
+
+            // @ts-ignore
+            const hash: string = rd.getHashCode('hrodvitnirhrodvitnirhrodvitnirhrodvitnir');
+
+            // @ts-ignore
+            assert.equal(hash, '36bc6854');
+        });
+    })
+
+    describe('Saltify', () => {
+        it('should saltify', () => {
+            const rd = new UUIDGenerator('hrodvitnir');
+
+            // @ts-ignore
+            const hash: string = rd.saltify('37c5208b', 12);
+
+            // @ts-ignore
+            assert.equal(hash.length, 12);
+        });
+    })
+
+    describe('Convert static', () => {
+        it('should keep length', () => {
+            const rd = new UUIDGenerator('hrodvitnir');
+
+            // @ts-ignore
+            const stat: string = rd.convertStatic('123456789012');
+
+            assert.equal(stat.length, 12);
+        });
+
+        it('should growth', () => {
+            const rd = new UUIDGenerator('hrodvitnir');
+
+            // @ts-ignore
+            const stat: string = rd.convertStatic('123456');
+
+            assert.equal(stat.length, 12);
+        });
+
+        it('should cat', () => {
+            const rd = new UUIDGenerator('hrodvitnir');
+
+            // @ts-ignore
+            const stat: string = rd.convertStatic('12345678901234567890');
+
+            assert.equal(stat.length, 12);
+        });
     })
 })
