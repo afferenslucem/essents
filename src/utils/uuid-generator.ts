@@ -1,4 +1,4 @@
-import { Random } from "./random";
+import {Random} from "./random";
 
 export class UUIDGenerator {
     private random = new Random();
@@ -23,7 +23,7 @@ export class UUIDGenerator {
 
         this.version = this.version || '4';
         this.staticData = this.staticData || this.generateStatic();
-        this.variant = (this.random.next(16) & 0x3 | 0x8).toString(16);
+        this.variant = this.getVariant();
     }
 
     private readFirstParam(first?: number | string) {
@@ -32,6 +32,10 @@ export class UUIDGenerator {
         } else if (typeof first == 'string') {
             this.staticData = this.convertStatic(first);
         }
+    }
+
+    private getVariant() {
+        return this.toString(this.random.next(16) & 0x3 | 0x8)
     }
 
     private convertStatic(userStatic: string): string {
@@ -76,7 +80,7 @@ export class UUIDGenerator {
     private getHashCode(str: string) {
         let hash = 0;
 
-        for(let i = 0; i < str.length; i++) {
+        for (let i = 0; i < str.length; i++) {
             hash = Math.imul(31, hash) + str.charCodeAt(i) | 0;
         }
 

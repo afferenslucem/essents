@@ -203,4 +203,16 @@ describe('UUIDGenerator', () => {
             assert.equal(stat.length, 12);
         });
     })
+
+    describe('Get variant', () => {
+        it('should get variant', () => {
+            const rd = new UUIDGenerator('hrodvitnir');
+
+            for (let i = 0; i < 50; i++) {
+                // @ts-ignore
+                const stat: string = rd.getVariant();
+                assert.equal(stat.length, 1);
+            }
+        });
+    })
 })
