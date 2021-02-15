@@ -106,4 +106,14 @@ describe('UUIDGenerator', () => {
         const uuid = rd.generate();
         assert.isTrue(uuid.charAt(14) == '6');
     });
+
+    it('should create with same lengthes', () => {
+        for (let i = 0; i < 32; i++) {
+            const rd = new UUIDGenerator( 'hrodvitnir');
+
+            const uuid = rd.generate();
+
+            assert.equal(uuid.length, 36)
+        }
+    });
 })

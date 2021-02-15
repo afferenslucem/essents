@@ -24,7 +24,7 @@ export class UUIDGenerator {
 
         this.version = this.version || '4';
         this.staticData = this.staticData || this.generateStatic();
-        this.variant = (this.random.next(16) & 0x3 | 0x8).toString();
+        this.variant = (this.random.next(16) & 0x3 | 0x8).toString(16);
     }
 
     private readFirstParam(first?: number | string) {
@@ -64,7 +64,7 @@ export class UUIDGenerator {
         const staticData = this.staticData;
         const random = this.generateStatic(6);
 
-        return `${date.slice(0, 8)}-${date.slice(-4)}-${version}${random.slice(0, 3)}-${variant}${random.slice(4, 6)}-${staticData}`
+        return `${date.slice(0, 8)}-${date.slice(-4)}-${version}${random.slice(0, 3)}-${variant}${random.slice(3, 6)}-${staticData}`
     }
 
     private getDate(): number {
