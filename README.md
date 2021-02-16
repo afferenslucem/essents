@@ -179,7 +179,7 @@ console.log(rd.next(10)) // number [0 ... 9]
 import {UUIDGenerator} from 'essents';
 
 const randomUuidGen = new UUIDGenerator();
-console.log(uuidGen.generate()) // fully random uuid v4
+console.log(randomUuidGen.generate()) // fully random uuid v4
 
 const uuidGen = new UUIDGenerator(5, 'hrodvitnir');
 console.log(uuidGen.generate()) // generates uuid v5 with hash of login
