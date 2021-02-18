@@ -1,6 +1,6 @@
 {
   "name": "essents",
-  "version": "1.4.2",
+  "version": "1.4.6",
   "description": "Just common utils",
   "typings": "lib/index",
   "main": "lib/index.js",
@@ -31,12 +31,13 @@
     "@types/chai": "^4.2.12",
     "@types/mocha": "^8.0.1",
     "@types/node": "^14.6.0",
+    "@types/sha1": "^1.1.2",
     "chai": "^4.2.0",
     "mocha": "^8.1.0",
     "ts-mocha": "^7.0.0",
     "typescript": "^3.9.7"
   },
-  "dependencies": {
-    "crypto": "^1.0.1"
+  "peerDependencies": {
+    "sha1": "^1.1.1"
   }
 }

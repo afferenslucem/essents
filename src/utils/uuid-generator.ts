@@ -1,6 +1,5 @@
-import {Random} from "./random";
-import * as crypto from 'crypto';
-import window = Mocha.reporters.Base.window;
+import { Random } from "./random";
+import sha1 from 'sha1';
 
 export class UUIDGenerator {
     private random = new Random();
@@ -80,9 +79,7 @@ export class UUIDGenerator {
     }
 
     private getHashCode(str: string) {
-        const hash = crypto.createHash('sha1');
-        hash.update(str);
-        return hash.digest('hex').slice(0, 12);
+        return sha1('str').slice(0, 12);
     }
 
     private toString(number: number): string {
