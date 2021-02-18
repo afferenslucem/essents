@@ -2,7 +2,11 @@ const MULTIPLIER = 1_000_000_000;
 const RANDOM_LIMIT = 1_000_000;
 
 export class Random {
-    private prev = 1;
+    private readonly seed: number = 0;
+
+    constructor() {
+        this.seed = Date.now() % 100000;
+    }
 
    /**
      * returns random value
@@ -10,11 +14,7 @@ export class Random {
      * @returns integer value [0 ... max - 1]
      */
     public next(max = RANDOM_LIMIT): number {
-        const result = (Random.random() + this.prev) % max;
-        
-        this.prev = result;
-
-        return result;
+       return (Random.random() + this.seed) % max;
     }
 
     private static random(): number {

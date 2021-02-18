@@ -6,9 +6,5 @@ describe('Random', () => {
         const rd = new Random();
 
         assert.isTrue(!!rd);
-
-        rd.next();
-        rd.next();
-        rd.next();
     });
 })

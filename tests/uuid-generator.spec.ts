@@ -42,6 +42,7 @@ describe('UUIDGenerator', () => {
             assert.isTrue(rd.staticData.length == 12);
 
             const uuid = rd.generate();
+
             assert.isTrue(uuid.charAt(14) == '5');
         });
 
@@ -127,16 +128,6 @@ describe('UUIDGenerator', () => {
             const rd = new UUIDGenerator('hrodvitnir');
 
             // @ts-ignore
-            const staticData: string = rd.generateStatic();
-
-            // @ts-ignore
-            assert.equal(staticData.length, 12);
-        });
-
-        it('should create static', () => {
-            const rd = new UUIDGenerator('hrodvitnir');
-
-            // @ts-ignore
             const staticData: string = rd.generateStatic(6);
 
             // @ts-ignore
@@ -152,7 +143,17 @@ describe('UUIDGenerator', () => {
             const hash: string = rd.getHashCode('hrodvitnir');
 
             // @ts-ignore
-            assert.equal(hash, '37c5208b');
+            assert.equal(hash, '15e50dcef949');
+        });
+
+        it('should generate hashCode for short string', () => {
+            const rd = new UUIDGenerator('h');
+
+            // @ts-ignore
+            const hash: string = rd.getHashCode('hrodvitnir');
+
+            // @ts-ignore
+            assert.equal(hash, '15e50dcef949');
         });
 
         it('should generate hashCode', () => {
@@ -162,19 +163,7 @@ describe('UUIDGenerator', () => {
             const hash: string = rd.getHashCode('hrodvitnirhrodvitnirhrodvitnirhrodvitnir');
 
             // @ts-ignore
-            assert.equal(hash, '36bc6854');
-        });
-    })
-
-    describe('Saltify', () => {
-        it('should saltify', () => {
-            const rd = new UUIDGenerator('hrodvitnir');
-
-            // @ts-ignore
-            const hash: string = rd.saltify('37c5208b', 12);
-
-            // @ts-ignore
-            assert.equal(hash.length, 12);
+            assert.equal(hash, '9f8f5f930e8a');
         });
     })
 

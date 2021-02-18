@@ -1,4 +1,6 @@
 import {Random} from "./random";
+import * as crypto from 'crypto';
+import window = Mocha.reporters.Base.window;
 
 export class UUIDGenerator {
     private random = new Random();
@@ -6,8 +8,6 @@ export class UUIDGenerator {
     private staticData: string = '';
     private version: string = '';
     private variant: string = '';
-
-    private readonly staticTargetLength = 12;
 
     public constructor();
     public constructor(v: number);
@@ -22,8 +22,14 @@ export class UUIDGenerator {
         }
 
         this.version = this.version || '4';
-        this.staticData = this.staticData || this.generateStatic();
+        this.staticData = this.staticData || this.defaultStatic();
         this.variant = this.getVariant();
+    }
+
+    private defaultStatic(): string {
+        const data = Date.now().toString(16) + this.random.next().toString(16);
+
+        return this.convertStatic(data);
     }
 
     private readFirstParam(first?: number | string) {
@@ -39,17 +45,13 @@ export class UUIDGenerator {
     }
 
     private convertStatic(userStatic: string): string {
-        const data = this.getHashCode(userStatic);
-
-        return data.length < this.staticTargetLength ? this.saltify(data) : data.slice(0, this.staticTargetLength);
+        return this.getHashCode(userStatic);
     }
 
-    private generateStatic(length?: number): string {
+    private generateStatic(length: number): string {
         let staticData = '';
 
-        const targetLength = length || this.staticTargetLength;
-
-        for (let i = 0; i < targetLength; i++) {
+        for (let i = 0; i < length; i++) {
             const rand = this.random.next(16);
             staticData += this.toString(rand);
         }
@@ -78,19 +80,9 @@ export class UUIDGenerator {
     }
 
     private getHashCode(str: string) {
-        let hash = 0;
-
-        for (let i = 0; i < str.length; i++) {
-            hash = Math.imul(31, hash) + str.charCodeAt(i) | 0;
-        }
-
-        return this.toString((Math.abs(hash)));
-    }
-
-    private saltify(hash: string) {
-        const saltLength = this.staticTargetLength - hash.length;
-
-        return hash + this.generateStatic(saltLength);
+        const hash = crypto.createHash('sha1');
+        hash.update(str);
+        return hash.digest('hex').slice(0, 12);
     }
 
     private toString(number: number): string {
