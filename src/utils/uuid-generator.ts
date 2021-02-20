@@ -7,6 +7,7 @@ export class UUIDGenerator {
     private staticData: string = '';
     private version: string = '';
     private variant: string = '';
+    private validN = ['8', '9', 'a', 'b'];
 
     public constructor();
     public constructor(v: number);
@@ -40,7 +41,8 @@ export class UUIDGenerator {
     }
 
     private getVariant() {
-        return this.toString(this.random.next(16))
+        const chooseN = this.random.next(4);
+        return this.validN[chooseN];
     }
 
     private convertStatic(userStatic: string): string {
