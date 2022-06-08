@@ -10,7 +10,7 @@ describe('Timer', () => {
         assert.equal(timer.delay, 10);
     });
     
-    it('should create timer without autorkill', () => {
+    it('should create timer without autokill', () => {
         const timer = new Timer(() => {}, 10, false);
 
         assert.equal(timer.alive, false);
