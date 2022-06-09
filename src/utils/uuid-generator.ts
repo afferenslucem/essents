@@ -81,7 +81,7 @@ export class UUIDGenerator {
     }
 
     private getHashCode(str: string) {
-        return sha1('str').slice(0, 12);
+        return sha1(str).slice(0, 12);
     }
 
     private toString(number: number): string {

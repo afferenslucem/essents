@@ -143,7 +143,7 @@ describe('UUIDGenerator', () => {
             const hash: string = rd.getHashCode('hrodvitnir');
 
             // @ts-ignore
-            assert.equal(hash, '3442496b96dd');
+            assert.equal(hash, '15e50dcef949');
         });
 
         it('should generate hashCode for short string', () => {
@@ -153,7 +153,7 @@ describe('UUIDGenerator', () => {
             const hash: string = rd.getHashCode('hrodvitnir');
 
             // @ts-ignore
-            assert.equal(hash, '3442496b96dd');
+            assert.equal(hash, '15e50dcef949');
         });
 
         it('should generate hashCode', () => {
@@ -163,7 +163,7 @@ describe('UUIDGenerator', () => {
             const hash: string = rd.getHashCode('hrodvitnirhrodvitnirhrodvitnirhrodvitnir');
 
             // @ts-ignore
-            assert.equal(hash, '3442496b96dd');
+            assert.equal(hash, '9f8f5f930e8a');
         });
     })
 
